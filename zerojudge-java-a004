@@ -1,0 +1,19 @@
+package zerojudge;
+
+import java.util.Scanner;
+
+public class Zerojudge {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int leapyearcheck;
+        while (input.hasNext()) {
+            leapyearcheck = input.nextInt();
+            if ((leapyearcheck % 4 == 0 && leapyearcheck % 100 != 0) || leapyearcheck % 400 == 0) {
+                System.out.println("閏年");
+            } else {
+                System.out.println("平年");
+            }
+        }
+    }
+}
