@@ -1,0 +1,27 @@
+package zerojudge;
+
+import java.util.Scanner;
+
+public class Zerojudge {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int moon, day, ans;
+        while (input.hasNext()) {
+            moon = input.nextInt();
+            day = input.nextInt();
+            ans = (moon * 2 + day) % 3;
+            switch (ans) {
+                case 0:
+                    System.out.println("普通");
+                    break;
+                case 1:
+                    System.out.println("吉");
+                    break;
+                case 2:
+                    System.out.println("大吉");
+                    break;
+            }
+        }
+    }
+}
