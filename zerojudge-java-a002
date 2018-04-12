@@ -1,0 +1,16 @@
+package zerojudge;
+
+import java.util.Scanner;
+
+public class Zerojudge {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int inputnumber1, inputnumber2;
+        while (input.hasNext()) {
+            inputnumber1 = input.nextInt();
+            inputnumber2 = input.nextInt();
+            System.out.println(inputnumber1 + inputnumber2);
+        }
+    }
+}
