@@ -1,0 +1,47 @@
+package zerojudge;
+
+import java.util.Scanner;
+
+public class zerojudge {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int factor, time, replace, decide, instruction;
+        String connect;
+        while (input.hasNext()) {
+            factor = input.nextInt();
+            replace = factor;
+            decide = 0;
+            instruction = 0;
+            connect = "";
+            for (int i = 2; i <= replace; i++) {
+                time = 0;
+                if (factor % i == 0) {
+                    while (factor % i == 0) {
+                        factor = factor / i;
+                        time = time + 1;
+                    }
+                    if (time > 1) {
+                        decide = 0;
+                        if (factor == 1 && instruction == 1) {
+                            connect = connect + " * " + String.valueOf(i) + "^" + String.valueOf(time);
+                        } else if (factor != 1 && instruction == 0) {
+                            connect = connect + String.valueOf(i) + "^" + String.valueOf(time) + " * ";
+                        } else if (factor == 1 && instruction == 0) {
+                            connect = connect + String.valueOf(i) + "^" + String.valueOf(time);
+                        }
+                    } else if (time == 1) {
+                        instruction = 1;
+                        decide = decide + 1;
+                        if (decide == 1) {
+                            connect = connect + String.valueOf(i);
+                        } else {
+                            connect = connect + " * " + String.valueOf(i);
+                        }
+                    }
+                }
+            }
+            System.out.println(connect);
+        }
+    }
+}
