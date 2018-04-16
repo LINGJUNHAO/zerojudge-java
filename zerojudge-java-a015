@@ -1,0 +1,27 @@
+package zerojudge;
+
+import java.util.Scanner;
+
+public class zerojudge {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int arraynumber1, arraynumber2;
+        while (input.hasNext()) {
+            arraynumber1 = input.nextInt();
+            arraynumber2 = input.nextInt();
+            int array[][] = new int[arraynumber2][arraynumber1];
+            for (int i = 0; i < arraynumber1; i++) {
+                for (int n = 0; n < arraynumber2; n++) {
+                    array[n][i] = input.nextInt();
+                }
+            }
+            for (int i = 0; i < array.length; i++) {
+                for (int n = 0; n < array[i].length; n++) {
+                    System.out.print(array[i][n] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
